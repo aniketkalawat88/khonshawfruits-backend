@@ -11,6 +11,7 @@ const connectDb = require('./config/db');
 const authRoute = require('./routes/auth.routes');
 const adminRoute = require("./routes/admin.routes")
 const enquiryRoute = require("./routes/enquiry.routes")
+const CommentRoute = require("./routes/comment.routes")
 
 app.use(cors())
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use(bodyParser.json())
 app.use("/api" , authRoute)
 app.use("/api" , adminRoute)
 app.use("/api" , enquiryRoute)
+app.use("/api" , CommentRoute)
 
 const Port = process.env.PORT || 5000;
 connectDb();
